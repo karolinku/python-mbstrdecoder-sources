@@ -11,10 +11,6 @@ Source0:        https://files.pythonhosted.org/packages/source/m/%{pypi_name}/%{
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-toml
-BuildRequires:  python3-pytest
-BuildRequires:  python3-wheel
-BuildRequires:  pyproject-rpm-macros
 
 %description
 multi-byte character string decoder
