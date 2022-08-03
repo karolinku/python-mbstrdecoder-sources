@@ -25,6 +25,7 @@ Requires:  python3-chardet
 
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}
+sed -i 's/chardet>=3.0.4,<5/chardet>=3.0.4/g' requirements/requirements.txt
 
 %generate_buildrequires
 %pyproject_buildrequires
