@@ -2,7 +2,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        multi-byte character string decoder
 
 License:        MIT
@@ -11,13 +11,13 @@ Source0:        https://files.pythonhosted.org/packages/source/m/%{pypi_name}/%{
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
+BuildRequires:  python3-pytest
 
 %description
 multi-byte character string decoder
 
 %package -n     python3-%{pypi_name}
 Summary:        %{summary}
-%{?python_provide:%python_provide python3-%{pypi_name}}
  
 Requires:  python3-chardet
 
@@ -45,6 +45,12 @@ sed -i 's/chardet>=3.0.4,<5/chardet>=3.0.4/g' requirements/requirements.txt
 %doc README.rst
 
 %changelog
+
+* Thu Aug 04 2022 Karolina Kula <kkula@redhat.com> - 1.1.0-2
+- Remove chardet <5 requirement
+- Remove %python_provide depracated macros
+- Add pytest as BR
+
 * Thu May 19 2022 Karolina Kula <kkula@redhat.com> - 1.1.0-1
 - initial package build
 
